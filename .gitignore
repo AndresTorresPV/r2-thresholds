@@ -2,6 +2,9 @@
 desktop.ini
 **/desktop.ini
 
+# Ignora la carpeta secrets
+Secrets/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
