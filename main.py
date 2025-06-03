@@ -101,7 +101,7 @@ def classify_r2(x: str, y: str, f: str, r2: float) -> str:
 
     print("🧠 Procesando niveles...")
 
-    for level in list(levels_dictionary.keys())[::-1]:  # reversed con print
+    for level in list(levels_dictionary.keys()):  # reversed con print
         valor_umbral = selected_thresholds[levels_dictionary[level]]
         print(f"Comparando R²={r2:.2f} con umbral para {level}: {valor_umbral.values[0]}")
         if r2 >= valor_umbral.values[0]:
@@ -143,5 +143,5 @@ async def recibir_evento(request: Request):
 
 if __name__ == "__main__":
     print("🧪 Ejecutando prueba local de classify_r2...\n")
-    prueba = classify_r2("idt", "idc", "lin", 0.65)
+    prueba = classify_r2("idt", "idc", "exp", 1)
     print("\n🧾 Resultado:", prueba)
