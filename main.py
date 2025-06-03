@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException, Request
 from Process.Hero import Hero, heroes
 import pandas as pd
+import uvicorn
+import os
 
 app = FastAPI()
 
@@ -145,3 +147,6 @@ if __name__ == "__main__":
     print("🧪 Ejecutando prueba local de classify_r2...\n")
     prueba = classify_r2("idt", "idc", "exp", 1)
     print("\n🧾 Resultado:", prueba)
+
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
